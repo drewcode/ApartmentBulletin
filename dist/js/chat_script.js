@@ -115,6 +115,9 @@ $(function() {
 
 
 
+$("#c1").click(open_func)
+$("#c2").click(open_func)
+$("#c3").click(open_func)
 
 
 
