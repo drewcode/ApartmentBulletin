@@ -1,24 +1,24 @@
-xhr=new XMLHttpRequest();
-var timeout;
-function updates(){
-	xhr.abort();
-	xhr.open("GET","updt.php",true);
-	xhr.onreadystatechange=update;
-	xhr.send(null);
-	timeout=setTimeout(updates,10000);
+function init()
+{
+	ev=new EventSource("updt.php");
+	ev.addEventListener("Data",populate,true);
+	
 }
 
-function update(){
-	
-	if(xhr.readyState==4 && xhr.status==200){
-		//alert("Hello");
-		data=xhr.responseText;
-		if(data!="\0"){
+function populate(event)
+{	
+	//id=document.getElementById("dataTables-example");
+	//id.innerHTML+="FRIEND : "+event.data+"<br/>";
+	if(event.data!="\0")
+	{
 		div=document.createElement("div");
 		document.getElementById("page-wrapper").appendChild(div);
 		
-		div.innerHTML="<div class=&quotrow&quot><div class=\"col-lg-12\"><div class=\"panel panel-default\"><div class=\"panel-heading\"> Topic</div> <div class=\"panel-body\"><table width=\"100%\" class=\"table\" id=\"dataTables-example\">Text</table> <div class=\"well\"><p>"+data+" </p></div></div></div></div></div>";
-		}clearTimeout(timeout);
-		updates();
+		d = event.data.split("-")
+		var topic = d[0]
+		var time = d[1]
+		var text = d[2]
+		div.innerHTML="<div class=&quotrow&quot><div class=\"col-lg-12\"><div class=\"panel panel-default\"><div class=\"panel-heading\">" + topic + "</div> <div class=\"panel-body\"><table width=\"100%\" class=\"table\" id=\"dataTables-example\">" + time + "</table> <div class=\"well\"><p>" + text + " </p></div></div></div></div></div>";
 	}
+	
 }

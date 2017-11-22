@@ -1,0 +1,22 @@
+<script>
+	//alert("works");
+	
+	//ev = new EventSource("server.php");
+	//ev.addEventListener("message", populate, true);
+	var source = new EventSource("server.php");
+	source.onmessage = function(event) {
+		document.getElementById("power").innerHTML += event.data + "<br>";
+	};
+	function populate(event)
+	{	
+		alert("sdfsf");
+		alert(event.data);
+	}
+		
+</script>
+
+Power : <span id="power"></span>
+<br/>
+Water : <span id="water"></span>
+<br/>
+Broadband : <span id="bb"></span>
