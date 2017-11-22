@@ -86,21 +86,21 @@ $(function() {
     generate_message(name, 'self');
   })
   
-  $("#chat-circle").click(open_func)
-  function open_func() {    
-    $("#chat-circle").toggle('scale');
-    $(".chat-box").toggle('scale');
-  }
-
+  $("#chat-circle").click(open_func, "")
+  
   $(".chat-box-toggle").click(close_func)
-  function close_func() {
-    $("#chat-circle").toggle('scale');
-    $(".chat-box").toggle('scale');
-  }
   
 })
 
+function open_func() {    
+    $("#chat-circle").toggle('scale');
+    $(".chat-box").toggle('scale');
+}
 
+function close_func() {
+    $("#chat-circle").toggle('scale');
+    $(".chat-box").toggle('scale');
+}
 
 
 
@@ -114,15 +114,19 @@ $(function() {
 
 
 
+$("#admin").click(open_func)
+$("#sec").click(open_func)
 
-$("#c1").click(open_func)
-$("#c2").click(open_func)
-$("#c3").click(open_func)
-
-
-
-
+$("#u1").click(open_func)
+$("#u2").click(open_func)
+$("#u3").click(open_func)
 
 
+
+$(document).click(function(event) {
+    var text = $(event.target).text();
+    if(text == "Admin" || text == "Security" || text == "qwe" || text == "zxc" || text == "asd")
+      $("#name").html(text);
+});
 
 
