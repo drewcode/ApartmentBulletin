@@ -9,13 +9,13 @@
 		clearstatcache();
 		if(filemtime("../admin_only/updates.txt")> $mod )
 		{
-			$f=file("updates.txt");
+			$f=file("../admin_only/updates.txt");
 			$d=$f[sizeof($f)-1];
 			echo "event:Data\n";
 			echo "data:{$d}\n\n";
 			ob_flush();
 			flush();
-			$mod=filemtime("updates.txt");
+			$mod=filemtime("../admin_only/updates.txt");
 		}
 		sleep(2);
 		//clearstatcache();

@@ -32,7 +32,7 @@
 
     <script>
         function init(){
-        ev=new EventSource("Receive.php");
+        ev=new EventSource("ReceiveBills.php");
         ev.addEventListener("message",populate,true);
     }
         function populate(event)
@@ -47,7 +47,7 @@
 
 </head>
 
-<body onload="init()>
+<body onload="init()">
 
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -109,7 +109,7 @@
                                         <small><span id="billno">12513154625</span></small> 
                                     </h4>
                                     <h4>Amount Payable:
-                                        <small><span id="Eamt">&#8377; 2710</span></small> 
+                                        <small><span id="Eamt">&#8377; </span></small> 
                                     </h4>
                                     <h4>Bill Period:
                                         <small><small><span id="billperiod">Oct-Nov'17</span></small> 
@@ -137,7 +137,7 @@
                                      <small><span id="billno">2136476491 </span></small>
                                 </h4>
                                 <h4>Amount Payable:
-                                     <small><span id="Wamt">&#8377; 600</span></small> 
+                                     <small><span id="Wamt">&#8377; </span></small> 
                                 </h4>
                                 <h4>Bill Period:
                                      <small><span id="billperiod">Oct-Nov'17</span></small> 
@@ -168,7 +168,7 @@
                                      <small><span id="billno">56237562</span></small>
                                 </h4>
                                 <h4>Amount Payable:
-                                     <small><span id="Gamt">&#8377; 750</span></small>
+                                     <small><span id="Gamt">&#8377; </span></small>
                                 </h4>
                                 <h4>Bill Period:
                                      <small><span id="billperiod">Oct-Nov'17</span></small> 
@@ -196,7 +196,7 @@
                                      <small><span id="billno">12543625</span></small>
                                 </h4>
                                 <h4>Amount Payable:
-                                     <small><span id="Mamt">&#8377; 1500</span></small> 
+                                     <small><span id="Mamt">&#8377; </span></small> 
                                 </h4>
                                 <h4>Bill Period:
                                      <small><span id="billperiod">Oct-Nov'17</span></small> 
